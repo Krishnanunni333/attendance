@@ -55,36 +55,40 @@
 </head>
 
 <body>
+
+
     <p>Click the button to get your coordinates.</p>
 
 <button onclick="getLocation()">Take Location</button>
 
 <p id="demo"></p>
-<input type="hidden" id="cord" name="cord" value={{cord}}>
+
 
 <script>
 var x = document.getElementById("demo");
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+   navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+  k = position.coords.latitude; 
+  m = position.coords.longitude;
+  console.log(k)
+  console.log(m)
 }
 </script>
 
 
 
-  <input type="hidden" id="dep" name="dep" value={{dep}}>
+  
     <div class="contentarea">
         <h1>
-            Using Javascript to capture Photo
+            Take a Picture
         </h1>
         <div class="camera">
             <video id="video">Video stream not available.</video>
