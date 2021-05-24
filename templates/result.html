@@ -1,0 +1,6 @@
+<form action="update" method="post" name="checks">
+  {% for c in cases %}
+  <input type="checkbox" value="{{c}}" name="checks"> {{c}}<br>
+  {% endfor %}
+  <br>
+  <input type="submit" value="Submit">
