@@ -7,7 +7,7 @@
   color: white; /* White text */
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
+  align: center;/* Float the buttons side by side */
 }
 
 /* Clear floats (clearfix hack) */
@@ -30,26 +30,33 @@
 
 <h1>Attendance Application</h1>
 
-<p>Two buttons in a group:</p>
+<p>Take Attendance:</p>
+<form action="fetch_csv" method="POST">
+  <label for="class">Choose a class:</label>
+  <select name="class" id="class">
+    <option value="IT">IT</option>
+    <option value="EC">EC</option>
+    <option value="CIVIL">CIVIL</option>
+    <option value="MECH">MECH</option>
+    <option value="EEE">EEE</option>
+  </select>
+  <br><br>
+  <label for="year">Choose an year:</label>
+  <select name="year" id="year">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+  <br><br>
+  <label for="code">Enter Subject Code:</label>
+    <input type="text" id="code" name="code" required>
+  <br><br>
+  <input type="submit" value="Take Picture" style="width:20%" color="green">
+</form>
+
 <div class="btn-group" style="width:100%">
-  <button style="width:50%" onclick="location.href='take_pic';">Take Picture</button>
-  <button style="width:50%" onclick="location.href='result';">Get Update</button>
+  <button style="width:20%" onclick="location.href='result';">Get Update</button>
 </div>
-
-<!--<p>Three buttons in a group:</p>
-<div class="btn-group" style="width:100%">
-  <button style="width:33.3%">Apple</button>
-  <button style="width:33.3%">Samsung</button>
-  <button style="width:33.3%">Sony</button>
-</div>
-
-<p>Four buttons in a group:</p>
-<div class="btn-group" style="width:100%">
-  <button style="width:25%">Apple</button>
-  <button style="width:25%">Samsung</button>
-  <button style="width:25%">Sony</button>
-  <button style="width:25%">HTC</button>
-</div>-->
-
 </body>
 </html>
